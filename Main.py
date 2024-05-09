@@ -25,7 +25,7 @@ async def get_new_session():
         )
 
         if response.status_code != 200:
-            raise ZeroDivisionError("OpenAi return status code: " + str(response.status_code))
+            return None, response.status_code
 
         session = response.json()
         session['deviceId'] = new_device_id
