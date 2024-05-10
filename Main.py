@@ -60,6 +60,11 @@ def handle_new_session():
         }), status_code
 
 
+@app.route('/health')
+def health_check():
+    return "OK", 200
+
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({
