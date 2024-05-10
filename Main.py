@@ -19,9 +19,14 @@ async def get_new_session():
         headers = {
             'oai-device-id': new_device_id
         }
+        proxies = {
+            "http": "3.212.148.199:3128",
+            "https": "3.212.148.199:3128"
+        }
         response = scraper.post(
             url,
-            headers=headers
+            headers=headers,
+            proxies=proxies
         )
 
         if response.status_code != 200:
