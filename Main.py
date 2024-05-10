@@ -65,11 +65,11 @@ def not_found(error):
     return jsonify({
         'status': False,
         'error': {
-            'message': f'The requested endpoint ({request.method.upper()} {request.path}) was not found. Please make sure to use "http://localhost:3041/v1" as the base URL.',
+            'message': f'The requested endpoint ({request.method.upper()} {request.path}) was not found. Please make sure to use "http://localhost:8000/v1" as the base URL.',
             'type': 'invalid_request_error'
         }
     }), 404
 
 
 if __name__ == '__main__':
-    app.run(port=3041, debug=True)
+    app.run(port=8000, debug=True)
